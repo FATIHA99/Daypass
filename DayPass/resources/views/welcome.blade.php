@@ -107,7 +107,7 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul id="nav" class="navbar-nav ml-auto">
                                     <li class="nav-item active">
-                                        <a class="page-scroll" href="#home">Home</a>
+                                        <a class="page-scroll" href="#home">Dashboard</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="page-scroll" href="#about">About</a>
@@ -302,7 +302,7 @@
                             <img src="assets/images/project/p-1.jpg" alt="Project">
                         </div>
                         <div class="project-content">
-                            <a class="project-title" href="#">Home Interior Design</a>
+                            <a class="project-title" href="#">Dashboard Interior Design</a>
                         </div>
                     </div>
                 </div>
@@ -312,7 +312,7 @@
                             <img src="assets/images/project/p-2.jpg" alt="Project">
                         </div>
                         <div class="project-content">
-                            <a class="project-title" href="#">Home Interior Design</a>
+                            <a class="project-title" href="#">Dashboard Interior Design</a>
                         </div>
                     </div>
                 </div>
@@ -322,7 +322,7 @@
                             <img src="assets/images/project/p-3.jpg" alt="Project">
                         </div>
                         <div class="project-content">
-                            <a class="project-title" href="#">Home Interior Design</a>
+                            <a class="project-title" href="#">Dashboard Interior Design</a>
                         </div>
                     </div>
                 </div>
@@ -332,7 +332,7 @@
                             <img src="assets/images/project/p-4.jpg" alt="Project">
                         </div>
                         <div class="project-content">
-                            <a class="project-title" href="#">Home Interior Design</a>
+                            <a class="project-title" href="#">Dashboard Interior Design</a>
                         </div>
                     </div>
                 </div>
@@ -342,7 +342,7 @@
                             <img src="assets/images/project/p-5.jpg" alt="Project">
                         </div>
                         <div class="project-content">
-                            <a class="project-title" href="#">Home Interior Design</a>
+                            <a class="project-title" href="#">Dashboard Interior Design</a>
                         </div>
                     </div>
                 </div>
@@ -352,7 +352,7 @@
                             <img src="assets/images/project/p-2.jpg" alt="Project">
                         </div>
                         <div class="project-content">
-                            <a class="project-title" href="#">Home Interior Design</a>
+                            <a class="project-title" href="#">Dashboard Interior Design</a>
                         </div>
                     </div>
                 </div>
@@ -362,7 +362,7 @@
                             <img src="assets/images/project/p-4.jpg" alt="Project">
                         </div>
                         <div class="project-content">
-                            <a class="project-title" href="#">Home Interior Design</a>
+                            <a class="project-title" href="#">Dashboard Interior Design</a>
                         </div>
                     </div>
                 </div>
