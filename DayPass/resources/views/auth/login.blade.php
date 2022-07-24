@@ -8,8 +8,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
+    <link rel="shortcut icon" href="images/logoBack.png" type="image/png">
+
 	<link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
 
 	</head>
 	<body>
@@ -36,8 +38,9 @@
 						<div class="img" style="background-image: url(images/bg-1.jpg);"></div>
 						<div class="login-wrap p-4 p-md-5">
 			      	<div class="d-flex">
-			      		<div class="w-100">
-			      			<h3 class="mb-4">Connexion</h3>
+                        <div class="w-100 mb-2">
+                            <img src="images/logo.png" name="logo" alt="Daypass" class="w-50" >                        
+
 			      		</div>
 								<div class="w-100">
 									<p class="social-media d-flex justify-content-end">
@@ -64,25 +67,17 @@
                       <form method="POST" action="{{ route('login') }}">
                         @csrf
                         {{-- email  --}}
-			      		<div class="form-group mt-3">
-
-                            <label for="email" value="{{ __('Email') }}"> Email</label>
-                            <input id="email" class="form-control" type="email" name="email" :value="old('email')" required autofocus />
-			      			{{-- <input type="text"   :value="old('email')"   required>
-			      			<label class="form-control-placeholder" for="username" value="{{ __('Email') }}" >Email</label> --}}
-			      		</div>
-                        {{-- password  --}}
+                        <div>
+                            <x-jet-label for="email" value="{{ __('Email') }}" />
+                            <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                        </div>
+            
+                        <div class="mt-4">
+                            <x-jet-label for="password" value="{{ __('Password') }}" />
+                            <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
+                        </div>
 		            <div class="form-group">
-
-                        <label for="password" value="{{ __('Mot de passe') }}" > Mot de passe </label>
-                        <input id="password" class="form-control" type="password" name="password" required autocomplete="current-password" />
-
-		              {{-- <input id="password"  type="password" name="password" required autocomplete="current-password">
-		              <label class="form-control-placeholder" for="password" value="{{ __('Mot de passe') }}"></label>
-		              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span> --}}
-		            </div>
-		            <div class="form-group">
-		            	<button type="submit" class="form-control btn btn-primary rounded submit px-3">    {{ __('Log in') }}</button>
+		            	<button type="submit" class="form-control btn btn-primary rounded submit px-2 my-3">    {{ __('Log in') }}</button>
 		            </div>
 		            <div class="form-group d-md-flex">
 		            	<div class="w-50 text-left">
