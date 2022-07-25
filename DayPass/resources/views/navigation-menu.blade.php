@@ -12,9 +12,21 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+            
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                                @if(auth()->check()&& auth()->user()->is_admin)
+                                {{ __('voir les Daypass') }}
+                                <x-jet-nav-link href="{{ route('reservation') }}" :active="request()->routeIs('reservation')">
+                                    {{ __(' Réservation') }}
+                                </x-jet-nav-link>
+                               @else
+                        {{ __(' Trouver un Daypass') }}
+                        <x-jet-nav-link href="{{ route('reservation') }}" :active="request()->routeIs('reservation')">
+                            {{ __(' Mes Réservation') }}
+                        </x-jet-nav-link>
+                        @endif  
                     </x-jet-nav-link>
+                  
                 </div>
             </div>
 

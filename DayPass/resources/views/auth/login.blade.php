@@ -4,25 +4,15 @@
   	<title>Daypass</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
-
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="images/logoBack.png" type="image/png">
-
 	<link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
-
 	</head>
 	<body>
-        <x-guest-layout>
-  
-
-                
-        <x-slot name="logo">
-        
-        </x-slot>
-
+    <x-guest-layout>        
+    <x-slot name="logo"></x-slot>
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -58,35 +48,26 @@
                         </div>
                     @endif
                       </h1>
-            
-                
-            
-                   
-            
-
                       <form method="POST" action="{{ route('login') }}">
                         @csrf
-                        {{-- email  --}}
-                        <div>
+                        <div>{{-- email  --}}
                             <x-jet-label for="email" value="{{ __('Email') }}" />
                             <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
                         </div>
-            
                         <div class="mt-4">
                             <x-jet-label for="password" value="{{ __('Password') }}" />
                             <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
                         </div>
 		            <div class="form-group">
-		            	<button type="submit" class="form-control btn btn-primary rounded submit px-2 my-3">    {{ __('Log in') }}</button>
+		            	<button type="submit" class="form-control btn btn-primary rounded submit px-2 my-3">{{ __('Log in') }}</button>
 		            </div>
 		            <div class="form-group d-md-flex">
 		            	<div class="w-50 text-left">
 			            	<label class="checkbox-wrap checkbox-primary mb-0" id="remember_me" name="remember" >Se souvenir de moi
 									  <input type="checkbox" checked>
 									  <span  id="remember_me" class="checkmark"></span>
-										</label>
-									</div>
-								
+							</label>
+						</div>	
 		            </div>
                     <div class="flex items-center justify-end mt-4">
                         @if (Route::has('password.request'))
@@ -94,11 +75,7 @@
                                 {{ __('Mot de passe oublier?') }}
                             </a>
                         @endif
-        
-                    
                     </div>
-
-
 		          </form>
 		          <p class="text-center">Pas un membre? <a data-toggle="tab" href="/register">Inscrivez-vous</a></p>
 		        </div>
@@ -107,14 +84,10 @@
 			</div>
 		</div>
 	</section>
-
 </x-guest-layout>
-	<script src="js/jquery.min.js"></script>
+  <script src="js/jquery.min.js"></script>
   <script src="js/popper.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/main.js"></script>
-
 	</body>
 </html>
-
-{{-- _________________________________________________________________________ --}}

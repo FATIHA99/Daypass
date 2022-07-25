@@ -520,7 +520,7 @@
     <!--====== FOOTER PART START ======-->
 
     <footer id="footer" class="footer-area">
-        <div class="footer-widget pt-80 pb-130">
+        <div class="footer-widget ">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-4 col-sm-8">
@@ -609,17 +609,7 @@
                 </div> <!-- row -->
             </div> <!-- container -->
         </div> <!-- footer widget -->
-        <div class="copyright-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="copyright text-center">
-                            <p>Template by <a href="https://uideck.com" rel="nofollow">UIdeck</a></p>
-                        </div> <!-- copyright -->
-                    </div>
-                </div> <!-- row -->
-            </div> <!-- container -->
-        </div> <!-- copyright-area -->
+       
     </footer>
 
     <!--====== FOOTER PART ENDS ======-->
