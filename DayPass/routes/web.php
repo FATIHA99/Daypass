@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\DaypassController;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,9 +23,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [DaypassController::class, 'index'])->name('dashboard');
 });
 
 
@@ -40,5 +38,6 @@ Route::middleware([
 });
 
 
+Route::get('/daypass/{slug}', [DaypassController::class, 'show'])->name('daypass.show');
 
 

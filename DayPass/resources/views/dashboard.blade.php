@@ -39,123 +39,62 @@ background: linear-gradient(253deg, rgba(235,54,86,0.3841911764705882) 25%, rgba
   @if(auth()->check()&& auth()->user()->is_admin)
   
   <button class="btn btn-light m-3" > Ajouter Daypass </button>
+
+ 
 @endif
   
 </div>
-    <div class="container-fluid main-cont ">
+    <div class="container-fluid main-cont mb-5 ">
         <div class="row news-row">
             <div class="container-fluid col-md-12 col-sm-6 justify-content-center news-block">
+    
 
                 <div class="card-group ">
+                   @foreach ($daypass as $item)
                   <div class="underlay">
                     <div class="card">
-                        <div class="card-img-top" style="background-image: url('assets/p-1.jpg')"></div>
-                        <div class="card-block" >
-                        <h5 class="card-title p-2" style="font-family: 'Anton', sans-serif">  Hotel africa<hr style="color: #EB3656"></h5>
-                        <h6 class="card-title ps-2 " style="font-family: 'Anton', sans-serif"> <i class="bi bi-geo-alt"></i> Rue atlas<hr style="color: #EB3656"></h6>
-                        <p class="card-text p-3" >Les Terrasses du Lac Marrakech vous propose de vous détendre autour de leur belle piscine à débordement en sirotant un délicieux cocktail maison ou en dégustant les délices du chef. 
+                        <div class="card-img-top" style="background-image: url({{ asset($item->image)}})"></div>
+
+                        <div class="card-block">
+                        <h5 class="card-title p-2" style="font-family: 'Anton', sans-serif">  {{ $item->label}}<hr style="color: #EB3656"></h5>
+                        <h6 class="card-title ps-2 " style="font-family: 'Anton', sans-serif"> <i class="bi bi-geo-alt"></i>{{ $item->lieux}}<hr style="color: #EB3656"></h6>
+                        <h6 class="card-text ps-3 " style="font-family: 'Anton', sans-serif" >{{ $item->service_price}} DH</h6> 
+                        <p class="card-text p-3" >{{ Str::limit($item->description,50)}}</p> 
+
                           @if(auth()->check()&& auth()->user()->is_admin)
-  
-                          <a href="#" class="btn btn-info">Modifier</a> 
-                          <a href="#" class="btn btn-info">Supprimer</a></p>
+                           <div>
+                          <a href="#" class="btn btn-secondary m-2 "><i class="bi bi-pencil-square"></i></a> 
+                          <a href="#" class="btn btn-secondary m-2"><i class="bi bi-trash3"></i></a>
+                          <a href="{{route('daypass.show',$item->slug)}}" class="btn btn-info"><i class="bi bi-eye-fill"></i></a></p>
+                           </div>
                            @else
-                          
+           
+
                           <a href="#" class="btn btn-info">Réserver</a> 
                           <a href="#" class="btn btn-info"><i class="bi bi-eye-fill"></i></a></p>
                           @endif
                         </div>
-                    </div>
-                  </div>
-
-
-
-                  <div class="underlay">
-                   <div class="card">
-                        <div class="card-img-top" style="background-image: url('assets/p-2.jpg') ;background-size:cover;"></div>
-                        <div class="card-block" >
-                          <h5 class="card-title p-2" style="font-family: 'Anton', sans-serif">Hotel africa<hr></h5>
-                          <h6 class="card-title ps-2" style="font-family: 'Anton', sans-serif"> <i class="bi bi-geo-alt"></i> Rue atlas<hr></h6>
-                          <p class="card-text p-3" >Les Terrasses du Lac Marrakech vous propose de vous détendre autour de leur belle piscine à débordement en sirotant un délicieux cocktail maison ou en dégustant les délices du chef. 
-                            <a href="#" class="btn btn-info">voir les details</a></p>
-                          </div>
-                      </div>
-                    </div>
-                    <div class="underlay">
-                      <div class="card">
-                        <div class="card-img-top" style="background-image: url('assets/p-3.jpg') ;background-size:cover;"></div>
-                        <div class="card-block" >
-                          <h5 class="card-title p-2" style="font-family: 'Anton', sans-serif">Hotel africa<hr></h5>
-                          <h6 class="card-title ps-2" style="font-family: 'Anton', sans-serif"> <i class="bi bi-geo-alt"></i> Rue atlas<hr></h6>
-                          <p class="card-text p-3" >Les Terrasses du Lac Marrakech vous propose de vous détendre autour de leur belle piscine à débordement en sirotant un délicieux cocktail maison ou en dégustant les délices du chef. <a href="#" class="btn btn-info">voir les details</a></p>
-                          </div>
-                      </div>
-                    </div>
-                    <div class="underlay">
-                      <div class="card">
-                        <div class="card-img-top" style="background-image: url('assets/p-4.jpg') ;background-size:cover;"></div>
-                        <div class="card-block" >
-                          <h5 class="card-title p-2" style="font-family: 'Anton', sans-serif">Hotel africa<hr></h5>
-                          <h6 class="card-title ps-2" style="font-family: 'Anton', sans-serif"> <i class="bi bi-geo-alt"></i> Rue atlas<hr></h6>
-                          <p class="card-text ps-3" >Les Terrasses du Lac Marrakech vous propose de vous détendre autour de leur belle piscine à débordement en sirotant un délicieux cocktail maison ou en dégustant les délices du chef. <a href="#" class="btn btn-info">voir les details</a></p>
-                          </div>
-                      </div>
-                    </div>
-                    <div class="underlay">
-                      <div class="card">
-                        <div class="card-img-top" style="background-image: url('assets/p-5.jpg') ;background-size:cover;"></div>
-                        <div class="card-block" >
-                          <h5 class="card-title p-2"  style="font-family: 'Anton', sans-serif">Hotel africa<hr></h5>
-                          <h6 class="card-title ps-2" style="font-family: 'Anton', sans-serif"> <i class="bi bi-geo-alt"></i> Rue atlas<hr></h6>
-                          <p class="card-text p-3" >Les Terrasses du Lac Marrakech vous propose de vous détendre autour de leur belle piscine à débordement en sirotant un délicieux cocktail maison ou en dégustant les délices du chef. <a href="#" class="btn btn-info">voir les details</a></p>
-                          </div>
-                      </div>
-                    </div>
-                    <div class="underlay">
-                      <div class="card">
-                        <div class="card-img-top" style="background-image: url('assets/p-6.jpg'); background-size:cover;"></div>
-                        <div class="card-block" >
-                          <h5 class="card-title p-2" style="font-family: 'Anton', sans-serif">Hotel africa<hr></h5>
-                          <h6 class="card-title ps-2" style="font-family: 'Anton', sans-serif"> <i class="bi bi-geo-alt"></i> Rue atlas<hr></h6>
-                          <p class="card-text p-3" >Les Terrasses du Lac Marrakech vous propose de vous détendre autour de leur belle piscine à débordement en sirotant un délicieux cocktail maison ou en dégustant les délices du chef. <a href="#" class="btn btn-info">voir les details</a></p>
-                          </div>
-                      </div>
-                    </div>
-                    <div class="underlay">
-                      <div class="card">
-                        <div class="card-img-top" style="background-image: url('assets/p-7.jpg') ;background-size:cover;"></div>
-                        <div class="card-block" >
-                          <h5 class="card-title p-2" style="font-family: 'Anton', sans-serif">Hotel africa<hr></h5>
-                          <h6 class="card-title ps-2" style="font-family: 'Anton', sans-serif"> <i class="bi bi-geo-alt"></i> Rue atlas<hr></h6>
-                          <p class="card-text p-3" >Les Terrasses du Lac Marrakech vous propose de vous détendre autour de leur belle piscine à débordement en sirotant un délicieux cocktail maison ou en dégustant les délices du chef. <a href="#" class="btn btn-info">voir les details</a></p>
-                          </div>
-                      </div>
-                    </div>
-                    <div class="underlay">
-                      <div class="card">
-                        <div class="card-img-top" style="background-image: url('https://i.imgur.com/M8PGoML.png') ;background-size:cover;"></div>
-                        <div class="card-block" >
-                          <h5 class="card-title p-2" style="font-family: 'Anton', sans-serif">Hotel africa<hr></h5>
-                          <h6 class="card-title ps-2" style="font-family: 'Anton', sans-serif"> <i class="bi bi-geo-alt"></i> Rue atlas<hr></h6>
-                          <p class="card-text p-3" >Les Terrasses du Lac Marrakech vous propose de vous détendre autour de leur belle piscine à débordement en sirotant un délicieux cocktail maison ou en dégustant les délices du chef. <a href="#" class="btn btn-info">voir les details</a></p>
-                          </div>
-                      </div>
-                    </div>
-                    <div class="underlay">
-                      <div class="card">
-                        <div class="card-img-top" style="background-image: url('https://i.imgur.com/Hp8NxLI.png') ;background-size:cover;"></div>
-                       <div class="card-block" >
-                        <h5 class="card-title p-2" style="font-family: 'Anton', sans-serif">Hotel africa<hr></h5>
-                        <h6 class="card-title ps-2" style="font-family: 'Anton', sans-serif"> <i class="bi bi-geo-alt"></i> Rue atlas<hr></h6>
-                        <p class="card-text p-3" >Les Terrasses du Lac Marrakech vous propose de vous détendre autour de leur belle piscine à débordement en sirotant un délicieux cocktail maison ou en dégustant les délices du chef. <a href="#" class="btn btn-info">voir les details</a></p>
                         </div>
-                      </div>
                     </div>
-                </div>
+                   
+                
+                   @endforeach
+
+                 </div>
+
+                 
+           
+
+
             </div>
         </div>
     </div>
+        <div class="my-5">
 
-    <!---------- for Admin -------------->
+                 <div class=" d-flex  justify-content-center   mt-5">
+                  {{$daypass -> links()}}
+                 </div>
+        </div>
 
 
     <!--=======Scripts======-->

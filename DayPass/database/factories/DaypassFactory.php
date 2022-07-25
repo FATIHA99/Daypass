@@ -18,13 +18,13 @@ class DaypassFactory extends Factory
      */
     public function definition()
     {
-        $title= $this->faker->title();
+        $title=fake()->realText(20,2);
         return [
             'label' =>  $title,
             'slug' => Str::slug($title),
             'lieux' => $title,
             'description' =>$this->faker->text,
-            'service_price' => $this->faker->text(),
+            'service_price' => $this->faker->numerify('######'),
             'image'=>$this->faker->imageUrl(640,480),
            
         ];
