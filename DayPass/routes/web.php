@@ -39,5 +39,9 @@ Route::middleware([
 
 
 Route::get('/daypass/{slug}', [DaypassController::class, 'show'])->name('daypass.show');
+Route::get('/create/daypass', [DaypassController::class, 'create'])->name('daypass.create');
+Route::post('/add/daypass', [DaypassController::class, 'store'])->name('daypass.store');
+
+
 
 

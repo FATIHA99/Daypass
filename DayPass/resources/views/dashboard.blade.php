@@ -38,7 +38,7 @@ background: linear-gradient(253deg, rgba(235,54,86,0.3841911764705882) 25%, rgba
   </select>
   @if(auth()->check()&& auth()->user()->is_admin)
   
-  <button class="btn btn-light m-3" > Ajouter Daypass </button>
+  <a class="btn btn-light m-3" href="{{route('daypass.create')}}" > Ajouter Daypass </a>
 
  
 @endif
@@ -53,7 +53,7 @@ background: linear-gradient(253deg, rgba(235,54,86,0.3841911764705882) 25%, rgba
                    @foreach ($daypass as $item)
                   <div class="underlay">
                     <div class="card">
-                        <div class="card-img-top" style="background-image: url({{ asset($item->image)}})"></div>
+                        <div class="card-img-top" style="background-image: url({{ asset('./uploads/'.$item->image) }})"  > </div>
 
                         <div class="card-block">
                         <h5 class="card-title p-2" style="font-family: 'Anton', sans-serif">  {{ $item->label}}<hr style="color: #EB3656"></h5>
