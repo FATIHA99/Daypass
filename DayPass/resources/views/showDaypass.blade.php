@@ -1,20 +1,48 @@
-<x-app-layout>
+<x-app-layout>    
 <!DOCTYPE html>
 <html lang="en">
     <head>
+
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title>daypass</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="css/styleShow.css">
+
+        <style>
+.map-container-3{
+  overflow:hidden;
+  padding-bottom:56.25%;
+  position:relative;
+  height:0;
+}
+.map-container-3 iframe{
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  position:absolute;
+}
+.bttnn{
+  width: 200px;
+  height: 40px;
+    background-color: #EB3656;
+    border: none;
+   
+}
+</style>
+
+
+
     </head>
     <body>
        
         <section class="py-5">
+
             <div class="container px-4 px-lg-5 my-5">
                 <div class="row gx-4 gx-lg-5 align-items-center">
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0 IMMG" src="{{asset('uploads/'.$daypass->image)}})" alt="Daypass" /></div>
+                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0 IMMG" src="{{asset('./uploads/'.$daypass->image) }}" alt="Daypass" /></div>
                     <div class="col-md-6">
                         <!-- <div class="small mb-1">SKU: BST-498</div> -->
                         <h1 class="display-5 fw-bolder">{{$daypass->label}}</h1>
@@ -29,9 +57,15 @@
                         <p class="lead">{{$daypass->description}}</p>
                         
                     </div>
+
+                    @if(auth()->check()&& ! auth()->user()->is_admin)
+  
                     <div class="d-flex justify-content-end">
-                    <button class="bttnn text-white " type="button" class="btn btn-secondary btn-lg">Clic here</button>
-                </div>
+                        <button class="bttnn text-white " type="button" class="btn btn-info btn-lg">Réserver</button>
+                    </div>                  
+                   
+                  @endif
+                   
                 </div>
             </div>
         </section>

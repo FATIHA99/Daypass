@@ -26,20 +26,21 @@
          @endif
     
         <div class="card-title">
-            <h5 class="card-title">poster une publication</h5>
+            <h5 class="card-title">Modifier  {{$daypass->label}}</h5>
 
         </div>
         {{--  --}}
             <div class="card-body">
-              <form action='{{route('daypass.store')}}' method="post" enctype="multipart/form-data">
+              <form action='{{route('daypass.update',$daypass->slug)}}' method="post" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
                <div class="mb-3">
                   <label for="exampleFormControlInput1" class="form-label">Hotel</label>
-                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="nom de l'hotel" name="label">
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="nom de l'hotel" name="label" value="{{$daypass->label}}">
                 </div> 
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">lieux</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="lieux de l'hotel" name="lieux">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="lieux de l'hotel" name="lieux" value="{{$daypass->lieux}}">
                   </div> 
                <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">image</label>
@@ -47,11 +48,11 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">les services avec les prix</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="service_price"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="service_price" >{{$daypass->service_price}}</textarea>
                   </div>
                 <div class="mb-3">
                   <label for="exampleFormControlTextarea1" class="form-label">description</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description">{{$daypass->description}}</textarea>
                 </div>
                 <div class="mb-3">
                     <input type="submit" class="btn btn-success" >

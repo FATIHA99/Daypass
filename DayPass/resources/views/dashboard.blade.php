@@ -11,15 +11,27 @@
     {{-- <link rel="icon" type="image/png" href="…"> --}}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/cards.css">
+    {{-- <link rel="stylesheet" type="text/css" href="css/cards.css"> --}}
     <link rel="shortcut icon" href="images/logoBack.png" type="image/png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<style> 
+.card{
+  margin: 5% 0%;
+}
+
+.card-body{
+  margin: 0% 0% 0% 3%;
+  padding: 6% 0%;
+}
+
+
+</style>
 
     </head>
     
     <body>
 
-<div class="container mt-3 d-flex justify-content-center  shadow-lg p-3 mb-5 bg-body rounded " style="background: rgb(235,54,86);
+<div class="container mt-3 d-flex justify-content-center  shadow-sm p-3 mb-5 bg-body rounded " style="background: rgb(235,54,86);
 background: linear-gradient(253deg, rgba(235,54,86,0.3841911764705882) 25%, rgba(249,249,249,0.9836309523809523) 98%);">
  
    <select class="h-25 border-0  rounded bg-light ms-5 mt-3" aria-label="Disabled select example" >
@@ -42,85 +54,97 @@ background: linear-gradient(253deg, rgba(235,54,86,0.3841911764705882) 25%, rgba
 
  
 @endif
-  
 </div>
-    <div class="container-fluid main-cont mb-5 ">
-        <div class="row news-row">
-            <div class="container-fluid col-md-12 col-sm-6 justify-content-center news-block">
+  {{--  --}}
+
+
+  @if(session()->has('success'))
+
+  <div class="div alert  container m-5 alert-success">
+   {{session()->get('success')}}
+  </div>
+  @endif
+
+
+  <div class="container">
+   
+    <!-- Card deck -->
+    <div class="card-deck row">
+
+
+
+     @foreach ($daypass as $item)
+     
+      <div class="col-xs-12 col-sm-6 col-md-4">
+      <!-- Card --> 
+      
+      <div class="card ">
     
-
-                <div class="card-group ">
-                   @foreach ($daypass as $item)
-                  <div class="underlay">
-                    <div class="card">
-                        <div class="card-img-top" style="background-image: url({{ asset('./uploads/'.$item->image) }})"  > </div>
-
-                        <div class="card-block">
-                        <h5 class="card-title p-2" style="font-family: 'Anton', sans-serif">  {{ $item->label}}<hr style="color: #EB3656"></h5>
-                        <h6 class="card-title ps-2 " style="font-family: 'Anton', sans-serif"> <i class="bi bi-geo-alt"></i>{{ $item->lieux}}<hr style="color: #EB3656"></h6>
-                        <h6 class="card-text ps-3 " style="font-family: 'Anton', sans-serif" >{{ $item->service_price}} DH</h6> 
-                        <p class="card-text p-3" >{{ Str::limit($item->description,50)}}</p> 
-
-                          @if(auth()->check()&& auth()->user()->is_admin)
-                           <div>
-                          <a href="#" class="btn btn-secondary m-2 "><i class="bi bi-pencil-square"></i></a> 
-                          <a href="#" class="btn btn-secondary m-2"><i class="bi bi-trash3"></i></a>
-                          <a href="{{route('daypass.show',$item->slug)}}" class="btn btn-info"><i class="bi bi-eye-fill"></i></a></p>
-                           </div>
-                           @else
-           
-
-                          <a href="#" class="btn btn-info">Réserver</a> 
-                          <a href="#" class="btn btn-info"><i class="bi bi-eye-fill"></i></a></p>
-                          @endif
-                        </div>
-                        </div>
-                    </div>
-                   
-                
-                   @endforeach
-
-                 </div>
-
-                 
-           
-
-
-            </div>
+        <!--Card image-->
+        <div class="view overlay col-xs-12 col-sm-6 col-md-4" style="background-image: url({{asset('./uploads/'.$item->image) }});
+          background-size:cover; height:300px; width:100% " >
+          {{-- <img class="card-img-top" src="" alt="Card image cap"> --}}
+         
         </div>
-    </div>
-        <div class="my-5">
+    
+        <!--Card content-->
+        <div class="card-body">
+    
+          <!--Title-->
+          <h4 class="card-title">{{ $item->label}}</h4>
+          <!--Text-->
+          <p class="card-text">{{ $item->lieux}} </p>
+          <p class="card-text">{{ $item->service_price}} </p>
+
+          <p class="card-text">{{ Str::limit($item->description,50)}}</p>
+
+          <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+          @if(auth()->check()&& auth()->user()->is_admin)
+          <div>
+   
+
+         <a href="{{route('daypass.edit',$item->slug)}}" class="btn btn-secondary m-2 "><i class="bi bi-pencil-square"></i></a> 
+         <form id="{{$item->id}}" action="{{route('daypass.delete',$item->slug)}}" method="POST">
+          @csrf
+          @method('DELETE')
+
+      </form>
+      <button type="submit" class="btn btn-danger"
+      onclick="event.preventDefault();
+      if(confirm('voulez vous supprimer ce poste ?'))
+      document.getElementById({{$item->id}}).submit();">
+  
+        <i class="bi bi-trash3"></i></button>
+         <a href="{{route('daypass.show',$item->slug) }}" class="btn btn-info"><i class="bi bi-eye-fill"></i></a></p>
+          </div>
+          @else
+         <a href="#" class="btn btn-info">Réserver</a> 
+         <a href="{{route('daypass.show',$item->slug) }}" class="btn btn-info"><i class="bi bi-eye-fill"></i></a></p>
+         @endif    
+        </div>
+    
+      </div> 
+      <!-- Card -->
+      </div> 
+      
+      
+      
+      @endforeach
+    </div>  
+    
+      
+   
+  
+  </div>
+
+
+ <div class="my-5">
 
                  <div class=" d-flex  justify-content-center   mt-5">
                   {{$daypass -> links()}}
                  </div>
-        </div>
-
-
-    <!--=======Scripts======-->
-    <script src="jquery-3.1.1.min.js"></script>
-    <script name="toggle-grid" type="text/javascript">
-    $(document).ready(function(){
-      $(document).on("keypress", function(event) {
-        // If 'alt + g' keys are pressed:
-        if (event.which === 169){
-            $('#toggle-grid').toggle();
-         }
-      });
+ </div>
     
-      $('#toggle-grid').on("click"
-      , function() {
-          $('.pixel-grid').toggle();
-          $('#toggle-grid').toggleClass('orange');
-        });
-    });
-    </script>
-    </body>
-    </html>
-    <!-- partial -->
-      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
-      <script  src="./js/script.js"></script>
-  
     </body>
     </html>   
  </x-app-layout> 
