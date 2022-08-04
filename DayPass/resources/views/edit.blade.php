@@ -12,9 +12,9 @@
  <body>
   
 
-<div class="row container">
+<div class="row d-flex justify-content-center">
   
-   <div class="card col-md-6 m-2" >
+   <div class="card col-12 col-md-6 mt-5" >
         @if ($errors->any())
           <div class="alert alert-danger">
               <ul>
@@ -26,7 +26,7 @@
          @endif
     
         <div class="card-title">
-            <h5 class="card-title">Modifier  {{$daypass->label}}</h5>
+            <h4 class="card-title m-5">Modifier  {{$daypass->label}}</h4>
 
         </div>
         {{--  --}}
@@ -46,17 +46,33 @@
                 <label for="exampleFormControlInput1" class="form-label">image</label>
                   <input type="file" class="form-control" id="exampleFormControlInput1" name="image">
                 </div>
-                <div class="mb-3">
+           
+                  <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">les services avec les prix</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="service_price" >{{$daypass->service_price}}</textarea>
-                  </div>
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Service 1" name="service1_price" value="{{$daypass->service1_price}}">
+                 </div>
+                 <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label">les services avec les prix</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Service 2" name="service2_price" value="{{$daypass->service2_price}}">
+               </div>
+               <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">les services avec les prix</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Service 3" name="service3_price" value="{{$daypass->service3_price}}">
+             </div>
+             <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">les services avec les prix</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Service 4" name="service4_price" value="{{$daypass->service4_price}}">
+           </div>
+
+
+
                 <div class="mb-3">
                   <label for="exampleFormControlTextarea1" class="form-label">description</label>
                   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description">{{$daypass->description}}</textarea>
                 </div>
                 <div class="mb-3">
-                    <input type="submit" class="btn btn-success" >
-                  </div>
+                  <input type="submit" value="Valider la modification" class="btn text-light"  style="background-color:#EF5350 ">
+                </div>
   
                </form>
             </div>

@@ -60,9 +60,12 @@ background: linear-gradient(253deg, rgba(235,54,86,0.3841911764705882) 25%, rgba
 
   @if(session()->has('success'))
 
-  <div class="div alert  container m-5 alert-success">
-   {{session()->get('success')}}
+<div class="d-flex justify-content-center"> 
+  <div class="div alert  col-4  alert-success">
+    {{session()->get('success')}}
+  
   </div>
+</div>
   @endif
 
 
@@ -94,33 +97,47 @@ background: linear-gradient(253deg, rgba(235,54,86,0.3841911764705882) 25%, rgba
           <h4 class="card-title">{{ $item->label}}</h4>
           <!--Text-->
           <p class="card-text">{{ $item->lieux}} </p>
-          <p class="card-text">{{ $item->service_price}} </p>
+          <p class="card-text">{{ $item->service1_price}} </p>
+          <p class="card-text">{{ $item->service2_price}} </p>
+          <p class="card-text">{{ $item->service3_price}} </p>
+          <p class="card-text">{{ $item->service4_price}} </p>
 
           <p class="card-text">{{ Str::limit($item->description,50)}}</p>
 
           <!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
           @if(auth()->check()&& auth()->user()->is_admin)
-          <div>
-   
 
-         <a href="{{route('daypass.edit',$item->slug)}}" class="btn btn-secondary m-2 "><i class="bi bi-pencil-square"></i></a> 
-         <form id="{{$item->id}}" action="{{route('daypass.delete',$item->slug)}}" method="POST">
-          @csrf
-          @method('DELETE')
+          <div class="row">
+      {{-- edit --}}
+      <div class="col-2"> 
+              <a href="{{route('daypass.edit',$item->slug)}}" class="btn btn-secondary  "><i class="bi bi-pencil-square"></i></a> 
+      </div>
+            <div class="col-2">   
+                <form id="{{$item->id}}" action="{{route('daypass.delete',$item->slug)}}" method="POST">
+                @csrf
+                @method('DELETE')
 
-      </form>
-      <button type="submit" class="btn btn-danger"
-      onclick="event.preventDefault();
-      if(confirm('voulez vous supprimer ce poste ?'))
-      document.getElementById({{$item->id}}).submit();">
-  
-        <i class="bi bi-trash3"></i></button>
-         <a href="{{route('daypass.show',$item->slug) }}" class="btn btn-info"><i class="bi bi-eye-fill"></i></a></p>
-          </div>
-          @else
-         <a href="#" class="btn btn-info">Réserver</a> 
-         <a href="{{route('daypass.show',$item->slug) }}" class="btn btn-info"><i class="bi bi-eye-fill"></i></a></p>
-         @endif    
+            </form> 
+            {{-- delete --}}
+            <button type="submit" class="btn btn-danger"
+            onclick="event.preventDefault();
+            if(confirm('voulez vous supprimer ce poste ?'))
+            document.getElementById({{$item->id}}).submit();">
+              <i class="bi bi-trash3"></i>
+            </button>
+      </div>
+     
+      {{-- show --}}
+      <div class="col-2">   
+
+              <a href="{{route('daypass.show',$item->slug) }}" class="btn btn-info"><i class="bi bi-eye-fill"></i></a></p>
+      </div>
+               
+            </div>
+                @else
+              <a href="{{route('daypass.reserver',$item->slug)}}" class="btn btn-info">Réserver</a> 
+              <a href="{{route('daypass.show',$item->slug) }}" class="btn btn-info"><i class="bi bi-eye-fill"></i></a></p>
+              @endif    
         </div>
     
       </div> 

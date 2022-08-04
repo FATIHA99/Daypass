@@ -50,7 +50,10 @@
                             <!-- <span class="text-decoration-line-through">$45.00</span> -->
                             <div class="cont ">
                                 <div class="price">À partir de </div>
-                                <div class="price2">  {{$daypass->service_price}} </div>
+                                <div class="price2">  {{$daypass->service1_price}} </div>
+                                <div class="price2">  {{$daypass->service2_price}} </div>
+                                <div class="price2">  {{$daypass->service3_price}} </div>
+                                <div class="price2">  {{$daypass->service4_price}} </div>
                                 <div class="price3">  DHS </div>
                             </div>
                         </div>
@@ -77,11 +80,11 @@
 
               <!--Google map-->
               <div class="">
-<div id="map-container-google-3 " class="z-depth-1-half map-container-3">
-    <iframe src="https://maps.google.com/maps?q=warsaw&t=k&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-      style="border:0" allowfullscreen></iframe>
-  </div>
-</div>
+            <div id="map-container-google-3 " class="z-depth-1-half map-container-3">
+                <iframe src="https://maps.google.com/maps?q=warsaw&t=k&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                style="border:0" allowfullscreen></iframe>
+            </div>
+            </div>
             </div>
         </section>
         <!-- Footer-->

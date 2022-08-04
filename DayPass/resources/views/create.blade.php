@@ -12,9 +12,9 @@
  <body>
   
 
-<div class="row container">
+<div class="row  d-flex justify-content-center">
   
-   <div class="card col-md-6 m-2" >
+   <div class="card  col-12 col-md-6 mt-5 " >
         @if ($errors->any())
           <div class="alert alert-danger">
               <ul>
@@ -26,7 +26,7 @@
          @endif
     
         <div class="card-title">
-            <h5 class="card-title">poster une publication</h5>
+            <h4 class="card-title m-5">Poster une publication</h4>
 
         </div>
         {{--  --}}
@@ -47,14 +47,27 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">les services avec les prix</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="service_price"></textarea>
-                  </div>
+                  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Service 1" name="service1_price">
+                 </div>
+                 <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label">les services avec les prix</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Service 2" name="service2_price">
+               </div>
+               <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">les services avec les prix</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Service 3" name="service3_price">
+             </div>
+             <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">les services avec les prix</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Service 4" name="service4_price">
+           </div>
+               
                 <div class="mb-3">
                   <label for="exampleFormControlTextarea1" class="form-label">description</label>
                   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
                 </div>
                 <div class="mb-3">
-                    <input type="submit" class="btn btn-success" >
+                    <input type="submit" class="btn text-light"  style="background-color:#EF5350 ">
                   </div>
   
                </form>

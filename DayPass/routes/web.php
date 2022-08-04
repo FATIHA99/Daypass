@@ -46,6 +46,7 @@ Route::delete('/delete/daypass/{slug}', [DaypassController::class, 'delete'])->n
 Route::get('/edit/daypass/{slug}', [DaypassController::class, 'edit'])->name('daypass.edit');
 Route::put('/update/daypass/{slug}', [DaypassController::class, 'update'])->name('daypass.update');
 
+Route::get('/reserverForm/daypass/{slug}', [DaypassController::class, 'reserver'])->name('daypass.reserver');
 
 
 

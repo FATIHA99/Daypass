@@ -18,8 +18,11 @@ return new class extends Migration
             $table->string('label');
             $table->string('slug');
             $table->string('lieux');
+            $table->string('service1_price')->default(null);
+            $table->string('service2_price')->default(null);
+            $table->string('service3_price')->default(null);
+            $table->string('service4_price')->default(null);
             $table->string('description');
-            $table->string('service_price');
             $table->string('image');
             $table->timestamps();
         });

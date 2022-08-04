@@ -7,12 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class daypass extends Model
 {
-    protected $fillable=['label','slug','lieux','description','service_price','image' ];
+    protected $fillable=['label','slug','lieux','description','service1_price','service2_price','service3_price','service4_price','image' ];
     use HasFactory;
         public function getRouteKeyName()
         {
-                    return 'slug'; 
-
+            return 'slug'; 
         }
 }
 

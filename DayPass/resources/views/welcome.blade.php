@@ -112,9 +112,7 @@
                                     <li class="nav-item">
                                         <a class="page-scroll" href="#about">About</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="page-scroll" href="#service">Services</a>
-                                    </li>
+                                
                                     <li class="nav-item">
                                         <a class="page-scroll" href="#project">Projects</a>
                                     </li>
@@ -122,7 +120,7 @@
                                         <a class="page-scroll" href="#team">Team</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="page-scroll" href="#contact">Contact</a>
+                                        <a class="page-scroll" href="#contact">Offres</a>
                                     </li>
                                 </ul> <!-- navbar nav -->
                             </div>
@@ -174,7 +172,7 @@
                             <img src="assets/images/about/about-1 (1).jpg" alt="About">
                         </div> <!-- single image -->
                         <div data-aos="fade-right" class="about-btn">
-                            <a class="main-btn" href="#"><span>27</span> Years Experience</a>
+                            <a class="main-btn" href="#"><span>hôtels</span>du Maroc</a>
                         </div>
                         <div class="single-image image-tow float-right">
                             <img src="assets/images/about/about-2.jpg" alt="About">
@@ -194,94 +192,7 @@
         </div> <!-- container -->
     </section>
 
-    <!--====== ABOUT PART ENDS ======-->
-
-    <!--====== SERVICES PART START ======-->
-
-    <section id="service" class="services-area pt-125 pb-130 gray-bg">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section-title text-center pb-20">
-                        <h5 class="sub-title mb-15">Our Services</h5>
-                        <h2 class="title">What We Do?</h2>
-                    </div> <!-- section title -->
-                </div>
-            </div> <!-- row -->
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.4s">
-                        <div class="services-icon">
-                            <i class="lni-paint-roller"></i>
-                        </div>
-                        <div class="services-content mt-15">
-                            <h4 class="services-title">Interior Design</h4>
-                            <p class="mt-20">Mauris aliquam, turpis sed mattis placerat, justo risus pellentesque quam, id finibus risus arcu eget neque.</p>
-                        </div>
-                    </div> <!-- single services -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.8s">
-                        <div class="services-icon">
-                            <i class="lni-blackboard"></i>
-                        </div>
-                        <div class="services-content mt-15">
-                            <h4 class="services-title">Design Consultancy</h4>
-                            <p class="mt-20">Mauris aliquam, turpis sed mattis placerat, justo risus pellentesque quam, id finibus risus arcu eget neque.</p>
-                        </div>
-                    </div> <!-- single services -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.2s">
-                        <div class="services-icon">
-                            <i class="lni-home"></i>
-                        </div>
-                        <div class="services-content mt-15">
-                            <h4 class="services-title">Residential Design</h4>
-                            <p class="mt-20">Mauris aliquam, turpis sed mattis placerat, justo risus pellentesque quam, id finibus risus arcu eget neque.</p>
-                        </div>
-                    </div> <!-- single services -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.4s">
-                        <div class="services-icon">
-                            <i class="lni-briefcase"></i>
-                        </div>
-                        <div class="services-content mt-15">
-                            <h4 class="services-title">Commercial Design</h4>
-                            <p class="mt-20">Mauris aliquam, turpis sed mattis placerat, justo risus pellentesque quam, id finibus risus arcu eget neque.</p>
-                        </div>
-                    </div> <!-- single services -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.8s">
-                        <div class="services-icon">
-                            <i class="lni-handshake"></i>
-                        </div>
-                        <div class="services-content mt-15">
-                            <h4 class="services-title">Hospitality Design</h4>
-                            <p class="mt-20">Mauris aliquam, turpis sed mattis placerat, justo risus pellentesque quam, id finibus risus arcu eget neque.</p>
-                        </div>
-                    </div> <!-- single services -->
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-8">
-                    <div class="single-services text-center mt-30 wow fadeInUp" data-wow-duration="1.5s" data-wow-delay="1.2s">
-                        <div class="services-icon">
-                            <i class="lni-grow"></i>
-                        </div>
-                        <div class="services-content mt-15">
-                            <h4 class="services-title">Co-working Space Design</h4>
-                            <p class="mt-20">Mauris aliquam, turpis sed mattis placerat, justo risus pellentesque quam, id finibus risus arcu eget neque.</p>
-                        </div>
-                    </div> <!-- single services -->
-                </div>
-            </div> <!-- row -->
-        </div> <!-- container -->
-    </section>
-
-    <!--====== SERVICES PART ENDS ======-->
-
-    <!--====== PROJECT PART START ======-->
+ 
 
     <section id="project" class="project-area pt-125 pb-130">
         <div class="container">
@@ -380,7 +291,7 @@
                 <div class="col-lg-6">
                     <div class="section-title text-center pb-20">
                         <h5 class="sub-title mb-15">Meet The Team</h5>
-                        <h2 class="title">Our Expert Designers</h2>
+                        <h2 class="title">Our Expert Devolopers</h2>
                     </div> <!-- section title -->
                 </div>
             </div>
@@ -394,8 +305,8 @@
                             <img src="assets/images/team/team-2.jpg" alt="Team">
                         </div>
                         <div class="team-content">
-                            <h4 class="team-name"><a href="#">Patric Green</a></h4>
-                            <span class="sub-title">Chief Designer</span>
+                            <h4 class="team-name"><a href="#">Amina salik</a></h4>
+                            {{-- <span class="sub-title">Chief Designer</span> --}}
                             <ul class="social mt-25">
                                 <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
                                 <li><a href="#"><i class="lni-twitter-original"></i></a></li>
@@ -411,8 +322,8 @@
                             <img src="assets/images/team/team-1.jpg" alt="Team">
                         </div>
                         <div class="team-content">
-                            <h4 class="team-name"><a href="#">Daryl Dixon</a></h4>
-                            <span class="sub-title">Consultant</span>
+                            <h4 class="team-name"><a href="#">Fatiha saht</a></h4>
+                            {{-- <span class="sub-title">Consultant</span> --}}
                             <ul class="social mt-25">
                                 <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
                                 <li><a href="#"><i class="lni-twitter-original"></i></a></li>
@@ -428,14 +339,7 @@
         </div> <!-- container -->
     </section>
 
-    <!--====== TEAM PART ENDS ======-->
-
-    <!--====== TESTIMONIAL PART START ======-->
-
     
-    <!--====== TESTIMONIAL PART ENDS ======-->
-
-    <!--====== CONTACT PART START ======-->
 
     <section id="contact" class="contact-area pt-125 pb-130 gray-bg">
         <div class="container">
@@ -491,7 +395,7 @@
                                 <p class="form-message"></p>
                                 <div class="col-md-12">
                                     <div class="single-form form-group text-center">
-                                        <button type="submit" class="main-btn">send message</button>
+                                        <button type="submit" class="main-btn">Envoyer les informations</button>
                                     </div> <!-- single form -->
                                 </div>
                             </div> <!-- row -->
@@ -502,9 +406,7 @@
         </div> <!-- container -->
     </section>
 
-    <!--====== CONTACT PART ENDS ======-->
 
-    <!--====== MAP PART START ======-->
 
     <section id="map" class="map-area">
         <div class="mapouter">
@@ -515,9 +417,6 @@
         <div class="map-bg bg_cover d-none d-lg-block" style="background-image: url(assets/images/map/Tourisme-1.webp)"></div>
     </section>
 
-    <!--====== MAP PART ENDS ======-->
-
-    <!--====== FOOTER PART START ======-->
 
     <footer id="footer" class="footer-area">
         <div class="footer-widget ">
@@ -612,32 +511,11 @@
        
     </footer>
 
-    <!--====== FOOTER PART ENDS ======-->
 
-    <!--====== BACK TO TOP PART START ======-->
 
     <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
 
-    <!--====== BACK TO TOP PART ENDS ======-->
-
-    <!--====== PART START ======-->
-
-    <!--
-    <section class="">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-"></div>
-            </div>
-        </div>
-    </section>
--->
-
-    <!--====== PART ENDS ======-->
-
-
-    <!-- row -->
-
-
+  
 
 
 

@@ -5,6 +5,7 @@ use App\Http\Requests\DaypassRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Daypass;
+use Illuminate\Support\Facades\DB;
 
 class DaypassController extends Controller
 {
@@ -15,7 +16,7 @@ class DaypassController extends Controller
         'daypass'=>$daypass
     ] );
   }
-
+// ! show 
   public function show($slug)
   {
       $daypass = Daypass::where('slug',$slug)->first();
@@ -43,7 +44,11 @@ class DaypassController extends Controller
          'slug'=> Str::slug($request->label),
          'lieux'=> $request->lieux,
          'description'=> $request->description,
-         'service_price'=>$request->service_price,
+         'service1_price'=>$request->service1_price,
+         'service2_price'=>$request->service2_price,
+         'service3_price'=>$request->service3_price,
+         'service4_price'=>$request->service4_price,
+
          'image'=>$image_name,
       ]);
         return redirect()->route('dashboard')->with([
@@ -89,7 +94,10 @@ class DaypassController extends Controller
    $daypass->update([
       'label'=>$request->label,
       'lieux'=>$request->lieux,
-      'service_price'=>$request->service_price,
+      'service1_price'=>$request->service1_price,
+      'service2_price'=>$request->service2_price,
+      'service3_price'=>$request->service3_price,
+      'service4_price'=>$request->service4_price,
       'description'=>$request->description,
       'slug'=>Str::slug($request->label),
       'image'=>$daypass->image
@@ -99,6 +107,22 @@ class DaypassController extends Controller
    ]);
  }
 
+
+
+
+//  !reserver
+
+public function reserver($slug)
+{
+   // return view('reserverForm');
+
+   $daypass = Daypass::where('slug',$slug)->first();
+   // $daypass = DB::table('daypasses')->select('service_price');
+
+   return view('reserverForm')->with([
+       'daypass' => $daypass
+   ]);
+}
 
 
 }
