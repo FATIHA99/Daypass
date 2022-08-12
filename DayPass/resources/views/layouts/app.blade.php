@@ -11,8 +11,10 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Styles -->
-
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <link type="text/css" rel="stylesheet" href="../../../css/bootstrap.min.css" />
         <link type="text/css" rel="stylesheet" href="../../../css/styleFormRes.css" />
+        <link rel="stylesheet" href="../../../css/reservation.css">
         {{-- @livewireStyles --}}
 
         <!-- Scripts -->

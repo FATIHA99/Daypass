@@ -84,7 +84,7 @@ background: linear-gradient(253deg, rgba(235,54,86,0.3841911764705882) 25%, rgba
       <div class="card ">
     
         <!--Card image-->
-        <div class="view overlay col-xs-12 col-sm-6 col-md-4" style="background-image: url({{asset('./uploads/'.$item->image) }});
+        <div class="  col-xs-12  col-md-12" style="background-image: url({{asset('./uploads/'.$item->image) }});
           background-size:cover; height:300px; width:100% " >
           {{-- <img class="card-img-top" src="" alt="Card image cap"> --}}
          
@@ -113,10 +113,9 @@ background: linear-gradient(253deg, rgba(235,54,86,0.3841911764705882) 25%, rgba
               <a href="{{route('daypass.edit',$item->slug)}}" class="btn btn-secondary  "><i class="bi bi-pencil-square"></i></a> 
       </div>
             <div class="col-2">   
-                <form id="{{$item->id}}" action="{{route('daypass.delete',$item->slug)}}" method="POST">
+            <form id="{{$item->id}}" action="{{route('daypass.delete',$item->slug)}}" method="POST">
                 @csrf
                 @method('DELETE')
-
             </form> 
             {{-- delete --}}
             <button type="submit" class="btn btn-danger"

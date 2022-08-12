@@ -17,6 +17,7 @@
 	background-image: url('../images/bg-1.jpg');
 	background-size: cover;
 	background-position: center;
+	
 }
 
 #booking::before {
@@ -26,15 +27,17 @@
 	right: 0;
 	bottom: 0;
 	top: 0;
-	background: rgba(47, 103, 177, 0.6);
+	background: rgba(246, 247, 247, 0.6);
 }
 
 .booking-form {
+	
 	background-color: #fff;
 	padding: 50px 20px;
 	-webkit-box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
 	box-shadow: 0px 5px 20px -5px rgba(0, 0, 0, 0.3);
 	border-radius: 4px;
+
 }
 
 .booking-form .form-group {
@@ -126,13 +129,17 @@
 }
 
 .booking-cta h1 {
-	font-size: 52px;
+	font-size: 50px;
 	text-transform: uppercase;
 	color: #fff;
 	font-weight: 700;
+	margin-left: 5%;
 }
 
 .booking-cta p {
 	font-size: 16px;
 	color: rgba(255, 255, 255, 0.8);
+}
+.spn{
+	color: #EB3656;
 }

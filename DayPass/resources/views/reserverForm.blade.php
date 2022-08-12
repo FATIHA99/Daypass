@@ -17,16 +17,20 @@
 <body>
 	<div id="booking" class="section">
 		<div class="section-center">
-			<div class="">
-				<div class="row">
-					{{-- <div class="col-md-7 col-md-push-5">
-						<div class="booking-cta">
-							<h3> reservation</h3>
-						</div>
-					</div> --}}
-					<div class="col-md-6 col-md-pull-7">
-						<div class="booking-form">
-							<form>
+			<div class="">	
+				<div class="container-fluid d-flex justify-content-center booking-cta">
+						
+					
+							<h1> reservation  <span class="spn">{{ $daypass->label}} </span></h1>
+					
+					
+					</div>
+				<div class="row" style="margin-right:0px; margin-left:0px;">
+				
+					<div class="col-md-6 col-md-pull-7 container ">
+						<div class="booking-form  ">
+							<form action='{{route('reservation.StoreReservation',$daypass->slug)}}' method="post">
+								@csrf
 								<div class="form-group">
 									<span class="form-label">votre CIN</span>
 									<input class="form-control" type="text" placeholder="Entrer votre CIN" name="cin">
@@ -35,7 +39,7 @@
 									<span class="form-label">votre Email</span>
 									<input class="form-control" type="text" placeholder="Entrer votre Email" name="email">
 								</div>
-								<div class="row">
+								<div class="row " >
 									<div class="col-sm-6">
 										<div class="form-group">
 											<span class="form-label">Date d'entrer</span>
@@ -74,7 +78,7 @@
 
 								@if ($daypass->service1_price != null)
 											<div>
-												<input type="checkbox" id="scales" name="scales" >
+												<input type="checkbox" id="service1" name="service1"    value="{{  $daypass->service1_price  }}"/>
 												<label for="scales">{{$daypass->service1_price}}	</label>
 											</div>
 											@endif
@@ -83,21 +87,21 @@
 											
 											
 											<div>
-												<input type="checkbox" id="scales" name="scales" >
+												<input type="checkbox" id="service2" name="service2"  value="{{  $daypass->service2_price  }}" >
 												<label for="scales">{{$daypass->service2_price}}	</label>
 											</div>
 											@endif
 
 								@if ($daypass->service3_price != null)	
 											<div>
-												<input type="checkbox" id="scales" name="scales" >
+												<input type="checkbox" id="service3" name="service3"   value="{{  $daypass->service3_price  }}">
 												<label for="scales">{{$daypass->service3_price}}	</label>
 											</div>
 								@endif
 
 								@if ($daypass->service4_price != null)
 											<div>
-												<input type="checkbox" id="scales" name="scales" >
+												<input type="checkbox" id="service4" name="service4"  value="{{  $daypass->service4_price  }}" >
 												<label for="scales">{{$daypass->service4_price}}	</label>
 											</div>
 						    	@endif
@@ -106,7 +110,7 @@
 					       </div>
 
 								<div class="form-btn">
-									<button class="submit-btn">Valider </button>
+									<input type="submit"  class="submit-btn" value="Valider" >
 								</div>
 							</form>
 						</div>

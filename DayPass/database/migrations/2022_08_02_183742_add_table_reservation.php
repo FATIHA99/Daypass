@@ -19,10 +19,11 @@ return new class extends Migration
         $table->date('date_entrer');
         $table->date('date_sortie');
         $table ->integer('nombre_personne');
-        $table->boolean('is_valid')->default(null);
+        $table->integer('is_valid');
+          $table->string('services');
         $table->unsignedBigInteger('id_user'); 
         $table->unsignedBigInteger('id_daypass');  
-       
+      
         $table->timestamps();
     });
     }

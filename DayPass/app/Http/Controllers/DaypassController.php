@@ -50,6 +50,7 @@ class DaypassController extends Controller
          'service4_price'=>$request->service4_price,
 
          'image'=>$image_name,
+         
       ]);
         return redirect()->route('dashboard')->with([
          'success' =>'article ajouté'
@@ -110,19 +111,7 @@ class DaypassController extends Controller
 
 
 
-//  !reserver
 
-public function reserver($slug)
-{
-   // return view('reserverForm');
-
-   $daypass = Daypass::where('slug',$slug)->first();
-   // $daypass = DB::table('daypasses')->select('service_price');
-
-   return view('reserverForm')->with([
-       'daypass' => $daypass
-   ]);
-}
 
 
 }

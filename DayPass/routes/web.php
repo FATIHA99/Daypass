@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\DaypassController;
+use App\Http\Controllers\ReservationController;
 use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,15 +29,15 @@ Route::middleware([
 });
 
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/reservation', function () {
-        return view('reservation');
-    })->name('reservation');
-});
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified'
+// ])->group(function () {
+//     Route::get('/reservation', function () {
+//         return view('reservation');
+//     })->name('reservation');
+// });
 
 
 Route::get('/daypass/{slug}', [DaypassController::class, 'show'])->name('daypass.show');
@@ -46,7 +48,14 @@ Route::delete('/delete/daypass/{slug}', [DaypassController::class, 'delete'])->n
 Route::get('/edit/daypass/{slug}', [DaypassController::class, 'edit'])->name('daypass.edit');
 Route::put('/update/daypass/{slug}', [DaypassController::class, 'update'])->name('daypass.update');
 
-Route::get('/reserverForm/daypass/{slug}', [DaypassController::class, 'reserver'])->name('daypass.reserver');
+Route::get('/reserverForm/daypass/{slug}', [ReservationController::class, 'reserver'])->name('daypass.reserver');
 
+
+Route::post('/add/reservation/{slug}', [ReservationController::class, 'StoreReservation'])->name('reservation.StoreReservation');
+Route::get('/reservation', [ReservationController::class, 'ReservationsUser'])->name('reservation');
+Route::delete('/delete/reservation/{id}', [ReservationController::class, 'delete'])->name('reservation.delete');
+Route::get('/AllReservation', [ReservationController::class, 'AllReservation'])->name('AllReservation');
+
+Route::post('/AllReservation/{id}', [ReservationController::class, 'status'])->name('reservation.status');
 
 
